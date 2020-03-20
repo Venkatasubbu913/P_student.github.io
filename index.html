@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Student Marks Manager</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url(./source/bg2.jpg);
+        }
+
+        #studentDetails,
+        #subjectsAndMarksDiv {
+            padding: 1%;
+            width: 60%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 40% 55%;
+            border: 1px solid;
+            grid-gap: 15px;
+        }
+
+        #marksSubmitBtn {
+            margin-left: 2%
+        }
+
+        h1 {
+            color: rgb(0, 140, 255);
+        }
+
+        button,
+        select {
+            padding: 6px 20px;
+            font-size: large;
+            font-family: monospace;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: chartreuse;
+        }
+
+        #showMarksParentDiv {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #selectDivToEnterMarks {
+            margin-top: 6%;
+        }
+
+        h4 {
+            margin-top: 6%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                display: block;
+            }
+
+            #studentDetails,
+            #subjectsAndMarksDiv {
+                width: 98%;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student Marks Manager</h1>
+    <div id="studentDetails">
+        <div>Name</div>
+        <div><input type="text" name="name" id="name"> </div>
+        <div>Email</div>
+        <div><input type="text" name="email" id="mail"> </div>
+        <div>Phone Number</div>
+        <div><input type="number" name="phoneNumber" id="phNo"></div>
+        <div><button type="submit" id="studentDetailsSubmitBtn">Submit</button></div>
+    </div>
+
+    <div id="subjectsParentDiv">
+        <div id="selectDivToEnterMarks">
+            <b>Select Student To Enter Marks</b><br>
+            <select name="student" id="selectStudentToAddMarks" class="studentSelect"></select>
+            <button type="reset" id="resetSubjectsBtn">Reset Subjects</button>
+        </div>
+
+        <div id="subjectsAndMarksDiv">
+            <div>
+                <h3>Subject Name</h3>
+                <hr>
+            </div>
+            <div>
+                <h3>Marks</h3>
+                <hr>
+            </div>
+            <div>Maths</div>
+            <div><input type="number" id="Maths" class="marksInput"></div>
+            <div>Physics</div>
+            <div><input type="number" id="Physics" class="marksInput"></div>
+            <div>Chemistry</div>
+            <div><input type="number" id="Chemistry" class="marksInput"></div>
+        </div>
+
+        <div>
+            <button type="menu" id="addSubjectBtn">Add more Subjects</button>
+            <button type="submit" id="marksSubmitBtn">Submit</button>
+        </div>
+    </div>
+
+    <h4>Select student to see his marks</h4>
+    <div id="showMarksParentDiv">
+        <select name="student" id="selectStudentToSeeHisDetails" class="studentSelect"></select>
+        <select name="studentMarksDetails" id="selectMarksDetail">
+            <option value="1">Highest Marks</option>
+            <option value="2">Total Subjects</option>
+            <option value="3">All Subjects Marks</option>
+            <option value="4">Average</option>
+            <option value="5">Lowest Marks</option>
+        </select>
+    <button type="submit" id="studentDetailsShowBtn">Show</button>
+    </div>
+    <div id="displaySelectedStudentDetail"></div>
+
+    <script src="student.js"></script>
+</body>
+
+</html>
